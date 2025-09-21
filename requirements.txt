@@ -1,0 +1,8 @@
+google-adk
+psutil
+litellm
+google-generativeai
+python-dotenv
+deprecated
+google-api-python-client
+absl-py
