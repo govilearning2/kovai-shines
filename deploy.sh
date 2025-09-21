@@ -1,18 +1,6 @@
 #!/bin/bash
 
-# Configuration - Update these values
-PROJECT_ID="kovai-shines-472309"
-SERVICE_NAME="emt-with-db"
-REGION="us-central1"
-GEMINI_API_KEY="AIzaSyBv9QkNESRTIU1g49w0fkgOZb8UEuS_Ojo"
-REASONING_ENGINE_APP_NAME="2901202167375331328"
-REASONING_ENGINE_APP_URL="projects/kovai-shines-472309/locations/us-central1/reasoningEngines/2901202167375331328"
-REASONING_ENGINE_ID="2901202167375331328"
-DB_USER="postgres"
-DB_PASSWORD="postgres"
-DB_NAME="postgres"
-DB_HOST="34.10.201.208"
-DB_PORT="5432"
+
 
 # Colors for output
 RED='\033[0;31m'
