@@ -1,0 +1,1 @@
+ gcloud run deploy lat-lon-service --source . --platform managed --region us-central1 --allow-unauthenticated --port 8080 --memory 1Gi --timeout 900
