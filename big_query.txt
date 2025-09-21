@@ -1,0 +1,29 @@
+
+BigQuery Remote Function Creation 
+
+bq query --use_legacy_sql=false '
+CREATE OR REPLACE FUNCTION `kovai-shines-472309.traffic_transaction_data.get_traffic_data`(
+    source_lat FLOAT64,
+    source_lng FLOAT64,
+    dest_lat FLOAT64,
+    dest_lng FLOAT64
+) 
+RETURNS STRING 
+REMOTE WITH CONNECTION `kovai-shines-472309.us-central1.remote-function-connection`
+OPTIONS (
+    endpoint = "https://get-traffic-duration-1081352890794.us-central1.run.app",
+    user_defined_context = [("mode", "driving")],
+    max_batching_rows = 1
+)'
+
+
+Create a table to store the traffic data
+CREATE OR REPLACE TABLE `kovai-shines-472309.traffic_transaction_data.traffic_predictions` (
+  departure_time TIMESTAMP,
+  source_lat FLOAT64,
+  source_lng FLOAT64,
+  dest_lat FLOAT64,
+  dest_lng FLOAT64,
+  duration_seconds INT64,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
+);
